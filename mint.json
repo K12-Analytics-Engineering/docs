@@ -40,12 +40,9 @@
     {
       "group": "Data Warehouse",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "data-warehouse/overview",
+        "data-warehouse/wide-tables",
+        "data-warehouse/metrics"
       ]
     }
   ],

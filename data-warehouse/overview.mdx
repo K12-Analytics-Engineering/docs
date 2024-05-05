@@ -1,0 +1,19 @@
+---
+title: 'Overview'
+description: ''
+icon: 'house'
+---
+
+We leverage dimensional modeling to design our data warehouse. This is what allows us to build a data warehouse that integrates data from multiple sources and provides a single source of truth for the organization. Here is a definition we like for dimensional modeling:
+
+> Dimensional modeling is a design approach optimized for analytic systems. A dimensional model captures how a process is measured. Data elements that represent measurements are called facts. Data elements that provide context for measurements are called dimensions. These elements are grouped into dimension tables and fact tables. Implemented in a relational database, the design is called a star schema.
+> 
+> -- <cite>Christopher Adamson: Star Schema The Complete Reference</cite>
+
+We can connect this to K12 data by using student school attendance as an example.
+
+<img
+  className="block"
+  src="/images/attendance.png"
+  alt="Attendance"
+/>
