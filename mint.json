@@ -44,6 +44,20 @@
         "data-warehouse/wide-tables",
         "data-warehouse/metrics"
       ]
+    },
+    {
+      "group": "Additional Functionality",
+      "pages": [
+        "addt-functionality/connected-sheets",
+        "addt-functionality/data-drops"
+      ]
+    },
+    {
+      "group": "Advanced",
+      "pages": [
+        "advanced/customization",
+        "advanced/row-level-security"
+      ]
     }
   ],
   "footerSocials": {
