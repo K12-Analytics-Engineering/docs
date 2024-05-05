@@ -2,6 +2,29 @@
 title: 'Wide Tables'
 description: ''
 icon: 'code'
+mode: 'wide'
 ---
 
-Coming soon...
+Our wide tables (also called One Big Table) can be thought of as flattened stars. We query the fact table selecting all columns and join onto all necessary dimensions. We recommend wide tables be used with BI platforms such as Google Looker Studio and Tableau. Below is a list of wide tables we have created in the past. We often start with these when building a new data warehouse and naturally move in different directions depending on the needs of the organization.
+
+| Mart       | Table                           |
+| ---------- | ------------------------------- |
+| Assessment | wide_student_assessment         |
+| Attendance | wide_student_school_attendance  |
+| Attendance | wide_student_section_attendance |
+| Discipline | wide_student_incident           |
+| Enrollment | wide_student_section            |
+| Enrollment | wide_student_school             |
+| Grades     | wide_student_assignment         |
+| Grades     | wide_student_category_grade     |
+| Grades     | wide_student_grade              |
+
+Wide datasets contain all the information needed for a specific analysis in a single table. Continuing with our Student School Attendance example, you will find measures on the right side of the table and dimensions on the left side. The table below shows a wide table for student school attendance for you visual learnes. Our wide table such as this one may have 30 - 40 columns, we are only showing a subset here.
+
+| student_last_name | student_first_name | school_year | calendar_date | attendance_code | attendance_duration | absence_duration |
+| ----------------- | ------------------ | ----------- | ------------- | --------------- | ------------------- | ---------------- |
+| Potter            | Harry              | 2025        | 2024-09-09    | P               | 1                   | 0                |
+| Potter            | Harry              | 2025        | 2024-09-10    | P               | 1                   | 0                |
+| Potter            | Harry              | 2025        | 2024-09-11    | EA              | 0                   | 1                |
+| Potter            | Harry              | 2025        | 2024-09-12    | P               | 1                   | 0                |
+| Potter            | Harry              | 2025        | 2024-09-13    | T               | 1                   | 0                |

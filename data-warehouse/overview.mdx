@@ -10,10 +10,12 @@ We leverage dimensional modeling to design our data warehouse. This is what allo
 > 
 > -- <cite>Christopher Adamson: Star Schema The Complete Reference</cite>
 
-We can connect this to K12 data by using student school attendance as an example.
+We can connect this to K12 data by using student school attendance as an example. Below you will see `fct_student_school_attendance` at the center. This is a fact table with one row per student per school year per instructional day enrolled. Each row for a student is tracking their day attendance status for a specific day. The fact table is surrounded by dimension tables that provide context for the attendance data. For example, the `dim_student` table provides information about the student such as their name, and whether or not they are an english language learner.
 
 <img
   className="block"
   src="/images/attendance.png"
   alt="Attendance"
 />
+
+Some BI platforms such as Microsoft Power BI and Lightdash work best with star schemas, and we'd recommend you connect these tables to them. The next section will talk about wide tables which tend to work best for BI platforms such as Google Looker Studio and Tableau.
