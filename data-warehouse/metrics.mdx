@@ -4,4 +4,34 @@ description: ''
 icon: 'code'
 ---
 
-Coming soon...
+Each fact or wide table contains one or more measures relative to a specific thing. For example, `wide_student_school_attendance` is measuring a student's school (daily) attendance while `wide_student_grade` is measuring a student's overall performance in a course section. There may be additional wide tables that go deeper to look at things like course section (period) attendance or course section assignments. Metrics build upon these tables by providing meaning through adding context. Let's look at an example.
+
+Looking again at our `wide_student_school_attendance` table, we see our dimensions such as student name and our measures such as `attendance_duration`.
+
+| student_last_name | student_first_name | school_year | calendar_date | attendance_code | attendance_duration | absence_duration |
+| ----------------- | ------------------ | ----------- | ------------- | --------------- | ------------------- | ---------------- |
+| Potter            | Harry              | 2025        | 2024-09-09    | P               | 1                   | 0                |
+| Potter            | Harry              | 2025        | 2024-09-10    | P               | 1                   | 0                |
+| Potter            | Harry              | 2025        | 2024-09-11    | EA              | 0                   | 1                |
+| Potter            | Harry              | 2025        | 2024-09-12    | P               | 1                   | 0                |
+| Potter            | Harry              | 2025        | 2024-09-13    | T               | 1                   | 0                |
+
+
+In this table, we can see that Harry Potter has a `attendance_duration` of 1 for each day he was present. We can also see that he has an `absence_duration` of 1 when absent. These are the measures. Metrics provide context to these measures. For example, we could create a metric called average daily attendance (attendance rate) which is calculated as the sum of `attendance_duration` divided by the number of records for Harry. This metric would provide a percentage of the time Harry Potter was present at school. This is just one example of how metrics can provide meaning to the raw measures in our wide tables.
+
+Metrics surface in tables prefixed with `metrics_` and located in the `prod_metrics` dataset.
+
+| Table                          | Description                                                                                                                                                              |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| metrics_student                | One row per student + school year + metric. This tables contains student metrics specific to a school year. Most metrics are typically located here.                     |
+| metrics_student_grading_period | One row per student + school year + grading period + metric. This table contains student metrics specific to a school year and grading period. For example, 2024 S1 GPA. |
+
+Here is an example of what your `metrics_student` table might look like:
+
+| student_last_name | student_first_name | school_year | metric_category | metric_name                | metric_value | metric_label | has_met_goal |
+| ----------------- | ------------------ | ----------- | --------------- | -------------------------- | ------------ | ------------ | ------------ |
+| Potter            | Harry              | 2024        | Attendance      | Average Daily Attendance   | 0.96         | On Track     | 1            |
+| Potter            | Harry              | 2024        | Attendance      | Absence Rate               | 0.04         | On Track     | 1            |
+| Potter            | Harry              | 2023        | Attendance      | Average Daily Attendance   | 0.85         | At Risk      | 0            |
+| Potter            | Harry              | 2024        | Academic        | Unweighted Current GPA     | 3.4          | On Track     | 1            |
+| Potter            | Harry              | 2024        | Academic        | Percent of Passing Classes | 0.95         | On Track     | 1            |
