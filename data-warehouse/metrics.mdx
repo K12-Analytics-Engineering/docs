@@ -19,6 +19,8 @@ Looking again at our `wide_student_school_attendance` table, we see our dimensio
 
 In this table, we can see that Harry Potter has a `attendance_duration` of 1 for each day he was present. We can also see that he has an `absence_duration` of 1 when absent. These are the measures. Metrics provide context to these measures. For example, we could create a metric called average daily attendance (attendance rate) which is calculated as the sum of `attendance_duration` divided by the number of records for Harry. This metric would provide a percentage of the time Harry Potter was present at school. This is just one example of how metrics can provide meaning to the raw measures in our wide tables.
 
+<Note>Below is how we approach metrics for those using Looker Studio and Tableau. If you use Lightdash, we use a different approach.</Note>
+
 Metrics surface in tables prefixed with `metrics_` and located in the `prod_metrics` dataset.
 
 | Table                          | Description                                                                                                                                                              |
