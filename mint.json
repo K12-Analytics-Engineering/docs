@@ -31,9 +31,10 @@
       "pages": [
         "get-started/introduction",
         "get-started/data-warehouse",
-        "get-started/customization",
+        "get-started/pricing",
         "get-started/support",
         "get-started/professional-service-hours",
+        "get-started/customization",
         "get-started/faq"
       ]
     },
