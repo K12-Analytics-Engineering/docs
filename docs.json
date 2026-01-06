@@ -1,0 +1,75 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "K12 Analytics Engineering",
+  "colors": {
+    "primary": "#0D9373",
+    "light": "#07C983",
+    "dark": "#0D9373"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "anchors": [
+      {
+        "anchor": "Documentation",
+        "icon": "book-open",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "get-started/introduction",
+              "get-started/data-warehouse",
+              "get-started/pricing",
+              "get-started/support",
+              "get-started/faq"
+            ]
+          },
+          {
+            "group": "Data Warehouse",
+            "pages": [
+              "data-warehouse/overview",
+              "data-warehouse/wide-tables",
+              "data-warehouse/metrics"
+            ]
+          },
+          {
+            "group": "Additional Functionality",
+            "pages": [
+              "addt-functionality/connected-sheets",
+              "addt-functionality/data-drops"
+            ]
+          },
+          {
+            "group": "Advanced",
+            "pages": [
+              "advanced/customization",
+              "advanced/row-level-security"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Community",
+          "href": "https://alcozer.slack.com",
+          "icon": "slack"
+        }
+      ]
+    }
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Contact Us",
+        "href": "mailto:marcos@alcozer.dev"
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/K12-Analytics-Engineering"
+    }
+  }
+}
