@@ -36,7 +36,8 @@
             "group": "Additional Functionality",
             "pages": [
               "addt-functionality/connected-sheets",
-              "addt-functionality/data-drops"
+              "addt-functionality/data-drops",
+              "addt-functionality/conversational-analytics"
             ]
           },
           {
